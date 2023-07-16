@@ -3,9 +3,9 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProductsGrid = ({ product }) => {
-  console.log(product);
+  // console.log(product);
   const { _id, name, images, price, ratings, stock, seller, category, shipping, sale } = product;
-  const push = useRouter();
+  const { push } = useRouter();
   return (
     <div onClick={() => push(`/products/${_id}`)} className="mb-8 border cursor-pointer hover:shadow-md hover:-translate-y-3 duration-150 scroll-smooth rounded-xl">
 
@@ -137,8 +137,8 @@ const ProductsGrid = ({ product }) => {
         <p className="text-xl px-4 font-header h-16">{name}</p>
         <div className="px-4 text-md space-y-1 py-1">
           <p className="text-md font-header">Seller: {seller}</p>
-          <p className="text-md font-header">Category: {category}</p>
-          <p className="text-md font-header">Shipping: ${shipping}</p>
+          {/* <p className="text-md font-header">Category: {category}</p> */}
+          {/* <p className="text-md font-header">Shipping: ${shipping}</p> */}
 
           <div className="py-5">
             {
@@ -148,7 +148,7 @@ const ProductsGrid = ({ product }) => {
           </div>
         </div>
         <div className="flex justify-between bg-yellow-400  items-center gap-2 rounded-b-xl border-t-2 ">
-          <button className="bg-yellow-400 hover:bg-yellow-500 rounded-b-xl py-3 text-center w-full">Add to Cart</button>
+          <button className="bg-yellow-400 hover:bg-yellow-500 rounded-b-xl py-3 text-center font-bold tracking-wide w-full">View Details</button>
         </div>
       </div>
     </div>

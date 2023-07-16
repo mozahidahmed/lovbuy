@@ -5,15 +5,9 @@ import ProductsComp from '@/components/Products/Products';
 
 
 const page = () => {
-    const {products} = useProducts();
 
-
-    const allProducts = products?.data?.result;
-
-    console.log("all products", allProducts);
     return (
-        <div className=''>
-            <h1 className="">Hello, Products Page !</h1>
+        <div className='w-full'>
             <ProductsComp/>
         </div>
     );
