@@ -130,10 +130,10 @@ const ProductsComp = () => {
     return (
         <div className="w-full">
             <div className="py-3">
-                <h3 className="text-4xl font-bold text-center py-4">
+                <h3 className="text-4xl text-gray-700 font-bold text-center py-4">
                     User Interface Products
                 </h3>
-                <p className="text-center text-xl">Building the Future</p>
+                <p className="text-center text-gray-500 text-xl">Building the Future</p>
             </div>
             <div className="">
                 <div className="bg-base-100">
