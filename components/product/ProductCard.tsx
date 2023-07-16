@@ -34,12 +34,14 @@ const ProductCard = ({ data }: DataProps) => {
             <AiOutlineStar />
             <AiOutlineStar />
           </div>
-          <div className="">
+          <div className="text-green-600 hover:text-yellow-500 duration-300 hover:bg-gray-100 p-3">
             <BsFillCartPlusFill />
           </div>
         </div>
       </div>
     </ProductDetailsButton>
+
+    // https://lovbuy-ecommerce-server.vercel.app/api/v1/products
   )
 }
 

@@ -11,6 +11,7 @@
   "insertPragma": false,
   "printWidth": 80,
   "jsxSingleQuote": false,
+  "plugins": ["prettier-plugin-tailwindcss"],
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false,
