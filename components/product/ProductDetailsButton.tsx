@@ -11,7 +11,7 @@ const ProductDetailsButton = ({ children, id }: Props) => {
   const { push } = useRouter()
 
   return (
-    <div className=' cursor-pointer' onClick={() => push(`/product/${id}`)}>
+    <div className=' cursor-pointer hover:-translate-y-1 duration-300' onClick={() => push(`/product/${id}`)}>
       {children}
     </div>
   )
