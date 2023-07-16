@@ -11,7 +11,8 @@ const ProductsGrid = ({ product }) => {
 
       <div className="h-72 relative overflow-hidden rounded-xl">
         <img className="h-full w-full relative rounded-xl hover:scale-110 duration-200" src={images[0]} alt="Shoes" />
-        {/* <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 hover:opacity-40 transition duration-300 ease-in-out bg-indigo-700"></div> */}
+        {sale && <img className="w-20 absolute top-0 right-0" src="https://i.ibb.co/5jWHjdt/hot-sale.png" alt="sale" />}
+        <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition duration-300 ease-in-out mix-blend-overlay bg-indigo-700"></div>
       </div>
       <div className="card-body p-0">
         <div className="flex items-center justify-between gap-2 px-4 py-2">
