@@ -8,7 +8,7 @@ const Product = () => {
       <h1 className='text-3xl font-bold'>Product Section</h1>
       <div className='grid lg:grid-cols-4 py-16 gap-2'>
         {product.map((p) => {
-          return <ProductCard />
+          return <ProductCard data={p} />
         })}
       </div>
     </div>
