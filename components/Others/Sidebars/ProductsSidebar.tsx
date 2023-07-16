@@ -1,7 +1,7 @@
 import { ProductsCategoryData } from "@/components/Data/ProductsCategoryData";
 import React from "react";
-import ReactStars from "react-rating-stars-component";
-const CoursesSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleReviewFilter, WebDesign, WebDevelopment, GraphicsDesign, SpokenEnglish, Others }) => {
+// import ReactStars from "react-rating-stars-component";
+const ProductsSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleReviewFilter, WebDesign, WebDevelopment, GraphicsDesign, SpokenEnglish, Others }) => {
 
   return (
     <div className=" bg-white px-4 pb-6 mt-3 shadow-lg border rounded-md overflow-hidden">
@@ -71,7 +71,7 @@ const CoursesSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleRevi
                   <span className="text-gray-600 pr-32">Ratings</span>
                 </button>
               </h2>
-              <div id="collapseTwo5" className="accordion-collapse collapse show" aria-labelledby="headingTwo5">
+              {/* <div id="collapseTwo5" className="accordion-collapse collapse show" aria-labelledby="headingTwo5">
                 <div className="accordion-body py-4 px-5">
                   <div className="flex justify-center">
                     <div>
@@ -190,7 +190,7 @@ const CoursesSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleRevi
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -199,4 +199,4 @@ const CoursesSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleRevi
   );
 };
 
-export default CoursesSidebar;
+export default ProductsSidebar;
