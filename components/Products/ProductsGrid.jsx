@@ -18,7 +18,7 @@ const ProductsGrid = ({ product }) => {
       <div className="card-body p-0">
         <div className="flex items-center justify-between gap-2 px-4 py-2">
           <div className="flex gap-2 items-center">
-            <h3 className="text-md font-semibold text-gray-300">{ratings}</h3>
+            <h3 className="text-md font-semibold text-gray-600">{ratings}</h3>
             {
 
               ratings === 1 &&
@@ -131,19 +131,19 @@ const ProductsGrid = ({ product }) => {
 
             }
           </div>
-          <h3 className="text-gray-300">({stock})</h3>
+          <h3 className="text-gray-600">({stock})</h3>
 
         </div>
-        <p className="text-xl px-4 font-header h-16">{name}</p>
+        <p className="text-xl px-4 font-header text-gray-700 h-16">{name}</p>
         <div className="px-4 text-md space-y-1 py-1">
-          <p className="text-md font-header">Seller: {seller}</p>
+          <p className="text-md font-header text-gray-600">Seller: {seller}</p>
           {/* <p className="text-md font-header">Category: {category}</p> */}
           {/* <p className="text-md font-header">Shipping: ${shipping}</p> */}
 
           <div className="py-5">
             {
-              sale ? <h3 className="text-white text-4xl font-bold"> <span className="text-xl">Price:</span> <span className="line-through">${price}</span> <span className="font-light">/</span><sub>${(price * sale / 100).toFixed(2)}</sub></h3> :
-                <h3 className="text-white text-4xl font-bold"> <span className="text-xl">Price:</span> ${price}</h3>
+              sale ? <h3 className="text-gray-500 text-4xl font-bold"> <span className="text-xl">Price:</span> <span className="line-through">${price}</span> <span className="font-light text-gray-500">/</span><sub className="text-gray-500">${(price * sale / 100).toFixed(2)}</sub></h3> :
+                <h3 className="text-gray-500 text-4xl font-bold"> <span className="text-xl">Price:</span> ${price}</h3>
             }
           </div>
         </div>

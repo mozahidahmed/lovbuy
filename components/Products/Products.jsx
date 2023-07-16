@@ -153,7 +153,7 @@ const ProductsComp = () => {
                                     <h3 className="text-gray-400 font-bold">Showing <span className="text-gray-500">{loadProducts?.length}</span> Total Results.</h3>
                                     <div className="flex justify-between items-center gap-2 px-7">
                                         <h3 className="text-gray-700 font-bold">Sort By:</h3>
-                                        <select onChange={filterByCategory} className="select bg-gray-700 max-w-xs">
+                                        <select onChange={filterByCategory} className="select bg-gray-300 text-gray-500 max-w-xs">
                                             <option disabled selected>Select Course</option>
                                             <option>All Products</option>
                                             <option>Men's Sneaker</option>
