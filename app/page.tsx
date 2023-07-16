@@ -4,7 +4,6 @@ import Header from '@/components/Header'
 import Team from '@/components/Team'
 import Company from '@/components/Company'
 import Footer from '@/components/shared/Footer'
-import Image from 'next/image'
 
 export default function Home() {
   return (
