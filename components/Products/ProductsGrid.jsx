@@ -12,6 +12,7 @@ const ProductsGrid = ({ product }) => {
       <div className="h-72 relative overflow-hidden rounded-xl">
         <img className="h-full w-full relative rounded-xl hover:scale-110 duration-200" src={images[0]} alt="Shoes" />
         {sale && <img className="w-20 absolute top-0 right-0" src="https://i.ibb.co/5jWHjdt/hot-sale.png" alt="sale" />}
+        {sale && <div className="w-16 h-16 bg-red-700 rounded-full absolute top-0 left-0"><h3 className="font-bold text-2xl text-center font-serif pt-1">{sale}%</h3> <p className="font-semibold text-xl text-center font-serif">Off</p></div>}
         <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition duration-300 ease-in-out mix-blend-overlay bg-indigo-700"></div>
       </div>
       <div className="card-body p-0">
@@ -141,7 +142,7 @@ const ProductsGrid = ({ product }) => {
 
           <div className="py-5">
             {
-              sale ? <h3 className="text-white text-4xl font-bold"> <span className="text-xl">Price:</span> <span className="line-through">${price}</span> <span className="font-light">/</span><sub>${price * sale / 100}</sub></h3> :
+              sale ? <h3 className="text-white text-4xl font-bold"> <span className="text-xl">Price:</span> <span className="line-through">${price}</span> <span className="font-light">/</span><sub>${(price * sale / 100).toFixed(2)}</sub></h3> :
                 <h3 className="text-white text-4xl font-bold"> <span className="text-xl">Price:</span> ${price}</h3>
             }
           </div>
