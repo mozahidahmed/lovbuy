@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import HeroAbout from '@/components/AboutUS/HeroAbout';
+import MoreAbout from '@/components/AboutUS/MoreAbout';
+import Partners from '@/components/AboutUS/Partners';
 
-type Props = {}
+const page = () => {
+    return (
+        <div className=''>
+            <HeroAbout/>
+            <MoreAbout/>
+            <Partners/>
+        </div>
+    );
+};
 
-const About = (props: Props) => {
-  return <div>About</div>
-}
+export default page;
 
-export default About

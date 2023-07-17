@@ -36,7 +36,9 @@ const AddToCartSection = ({ data }: Props) => {
   }
 
   // Add to cart
-  const { cart, setCart } = useContext(CartContext)
+  const { cart, setCart } = useContext<any>(CartContext)
+
+
   const addToCart = () => {
     const isExist = cart.find((c: any) => c.id === _id)
     if (isExist) {

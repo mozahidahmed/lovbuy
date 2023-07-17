@@ -1,9 +1,16 @@
-import React from 'react'
+import React from 'react';
+import ContectBanner from '@/components/ContactUS/ContectBanner';
+import ContactMap from '@/components/ContactUS/ContactMap';
+import ContactApply from '@/components/ContactUS/ContactApply';
 
-type Props = {}
+const page = () => {
+    return (
+        <div className='w-full'>
+            <ContectBanner />
+            <ContactMap />
+            <ContactApply />
+        </div>
+    );
+};
 
-const Contact = (props: Props) => {
-  return <div>Contact</div>
-}
-
-export default Contact
+export default page;

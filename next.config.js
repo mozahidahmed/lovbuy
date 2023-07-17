@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['assets.adidas.com'],
-  },
   reactStrictMode: true,
+  images: {
+    domains: ['i.ibb.co', 'assets.adidas.com'],
+  },
 }
 
 module.exports = nextConfig
