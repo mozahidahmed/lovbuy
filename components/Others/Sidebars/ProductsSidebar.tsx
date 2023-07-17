@@ -2,7 +2,7 @@ import { ProductsCategoryData } from "@/components/Data/ProductsCategoryData";
 import React from "react";
 import RangeSlide from '@/components/Others/Sidebars/RangeSlide/RangeSlide';
 
-const ProductsSidebar = ({ handleSearchResult, handlePrice, handleReviewFilter }) => {
+const ProductsSidebar = ({ handleSearchResult, handlePrice, handleReviewFilter }:any) => {
 
   return (
     <div className=" bg-white px-4 pb-6 mt-3 shadow-lg border rounded-md overflow-hidden">
