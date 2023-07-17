@@ -142,7 +142,7 @@ const ProductsGrid = ({ product }) => {
 
           <div className="py-5">
             {
-              sale ? <h3 className="text-gray-500 text-4xl font-bold"> <span className="text-xl">Price:</span> <span className="line-through">${price}</span> <span className="font-light text-gray-500">/</span><sub className="text-gray-500">${(price * sale / 100).toFixed(2)}</sub></h3> :
+              sale ? <h3 className="text-gray-500 text-4xl font-bold"> <span className="text-xl">Price:</span> <span className="line-through">${price}</span> <span className="font-light text-gray-500">/</span><sub className="text-gray-500">${(price - (price * sale / 100)).toFixed(2)}</sub></h3> :
                 <h3 className="text-gray-500 text-4xl font-bold"> <span className="text-xl">Price:</span> ${price}</h3>
             }
           </div>
