@@ -1,6 +1,7 @@
 import { ProductsCategoryData } from "@/components/Data/ProductsCategoryData";
 import React from "react";
-import RangeSlide from '@/components/Others/Sidebars/RangeSlide/RangeSlide'
+import RangeSlide from '@/components/Others/Sidebars/RangeSlide/RangeSlide';
+
 const ProductsSidebar = ({ handleSearchResult, handlePrice, handleReviewFilter }) => {
 
   return (
