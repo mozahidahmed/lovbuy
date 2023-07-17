@@ -12,7 +12,7 @@ const ProductsGrid = ({ product }) => {
       <div className="h-72 relative overflow-hidden rounded-xl">
         <img className="h-full w-full relative rounded-xl hover:scale-110 duration-200" src={images[0]} alt="Shoes" />
         {sale && <img className="w-20 absolute top-0 right-0" src="https://i.ibb.co/5jWHjdt/hot-sale.png" alt="sale" />}
-        {sale && <div className="w-16 h-16 bg-red-700 rounded-full absolute top-0 left-0"><h3 className="font-bold text-2xl text-center font-serif pt-1">{sale}%</h3> <p className="font-semibold text-xl text-center font-serif">Off</p></div>}
+        {sale && <div className="w-16 h-16 bg-red-700 text-white rounded-full absolute top-0 left-0"><h3 className="font-bold text-2xl text-center font-serif pt-1">{sale}%</h3> <p className="font-semibold text-md text-center font-serif">Off</p></div>}
         <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full opacity-0 hover:opacity-70 transition duration-300 ease-in-out mix-blend-overlay bg-indigo-700"></div>
       </div>
       <div className="card-body p-0">
@@ -147,8 +147,8 @@ const ProductsGrid = ({ product }) => {
             }
           </div>
         </div>
-        <div className="flex justify-between bg-yellow-400  items-center gap-2 rounded-b-xl border-t-2 ">
-          <button className="bg-yellow-400 hover:bg-yellow-500 rounded-b-xl py-3 text-center font-bold tracking-wide w-full">View Details</button>
+        <div className="flex justify-between bg-orange-500 text-white items-center gap-2 rounded-b-xl border-t-2 ">
+          <button className="bg-orange-500 hover:bg-orange-600 rounded-b-xl py-3 text-center font-bold tracking-wide w-full">View Details</button>
         </div>
       </div>
     </div>
