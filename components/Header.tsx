@@ -32,9 +32,9 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className='w-full sticky top-0 bg-gray-300 h-20 z-50 shadow'>
 
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-white border-gray-200 sticky top-0 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" className="flex items-center">
             <img src="https://res.cloudinary.com/dsigyjfjq/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689492016/lovbuy_ejfjyb.jpg?_s=public-apps" className="h-12 mr-3" alt="Flowbite Logo" />
