@@ -1,12 +1,23 @@
 'use client'
-import React, { ChangeEvent, useState } from 'react'
-import { BsHeart, BsHeartArrow } from 'react-icons/bs'
+
+import { CartContext } from '@/components/Context/Cart'
+import React, { ChangeEvent, useContext, useState } from 'react'
+import toast from 'react-hot-toast'
+import { BsHeart } from 'react-icons/bs'
 
 type Props = {
-  quantity:number
+  data: {
+    _id: string
+    stock: number
+    name: string
+    images: [string]
+    price: number
+  }
 }
 
-const AddToCartSection = ({ quantity }: Props) => {
+const AddToCartSection = ({ data }: Props) => {
+  const { _id, stock, name, images, price } = data
+
   // Color
   const colors = ['red', 'green', 'orange', 'blue']
   const [selectedColor, setSelectedColor] = useState(colors[0])
@@ -21,6 +32,28 @@ const AddToCartSection = ({ quantity }: Props) => {
     const value = Number(e.target.value)
     if (value > 1) {
       setCartCount(value)
+    }
+  }
+
+  // Add to cart
+  const { cart, setCart } = useContext(CartContext)
+  const addToCart = () => {
+    const isExist = cart.find((c: any) => c.id === _id)
+    if (isExist) {
+      toast.error('This product already added!')
+      return
+    } else {
+      setCart([
+        ...cart,
+        {
+          id: _id,
+          name: name,
+          image: images[0],
+          price: price,
+          quantity: cartCount,
+        },
+      ])
+      toast.success('Successfully added')
     }
   }
 
@@ -82,7 +115,9 @@ const AddToCartSection = ({ quantity }: Props) => {
             +
           </button>
         </div>
-        <button className="my-2 block w-full bg-orange-500 py-4 text-gray-100 duration-200 hover:bg-orange-400 md:w-2/5">
+        <button
+          onClick={addToCart}
+          className="my-2 block w-full bg-orange-500 py-4 text-gray-100 duration-200 hover:bg-orange-400 md:w-2/5">
           Add to Cart
         </button>
         <button className="w-full bg-lime-600  py-4 duration-200 hover:bg-lime-400 md:w-2/5 ">
@@ -93,7 +128,7 @@ const AddToCartSection = ({ quantity }: Props) => {
         <BsHeart /> <span>Add to wishlist</span>
       </button>
 
-      <p>Available Quantity: {quantity}</p>
+      <p>Available Quantity: {stock}</p>
     </div>
   )
 }

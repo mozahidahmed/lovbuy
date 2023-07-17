@@ -7,12 +7,12 @@ import Footer from '@/components/shared/Footer'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col justify-between ">
-      <Hero />
-      <Product />
-      <Team />
-      <Company />
-
-    </main>
+    
+      <main className="flex min-h-screen flex-col justify-between ">
+        <Hero />
+        <Product />
+        <Team />
+        <Company />
+      </main>
   )
 }

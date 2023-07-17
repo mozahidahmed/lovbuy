@@ -50,7 +50,7 @@ const ProductDetail = async ({ params }: Props) => {
         {/* Right side or detail section */}
         <div className="md:w-1/2">
           <DetailSection
-            info={{ name, price, stock, ratings, quantity, shipping, seller }}
+            info={{ _id,name, price, stock,images, ratings, shipping, seller }}
           />
         </div>
       </div>

@@ -8,18 +8,19 @@ import Ratings from './Ratings'
 
 type InfoProps = {
   info: {
+    _id:string
     name: string
     price: number
     stock: number
     ratings: number
-    quantity: number
     shipping: number
     seller: string
+    images:[string]
   }
 }
 
 const DetailSection = ({ info }: InfoProps) => {
-  const { name, price, stock, ratings, quantity, shipping, seller } = info
+  const { _id, name, price, stock,images, ratings, shipping, seller } = info
 
   return (
     <div>
@@ -54,7 +55,7 @@ const DetailSection = ({ info }: InfoProps) => {
       {/* ------------------------------------------------------------------------------------
                               Add cart and buy now section 
       -------------------------------------------------------------------------------------*/}
-      <AddToCartSection quantity={stock} />
+      <AddToCartSection data={{_id,name,images,price,stock}} />
 
       {/* ---------------------------------------------------------------------------------------
                                         Some Extra 

@@ -58,11 +58,11 @@ const ProductCard = ({ data }: DataProps) => {
 
         <h2>
           <span className="text-xl font-semibold text-orange-500">
-            $ 420.33
-          </span>{' '}   
+            $ {price.toFixed(2)}
+          </span>{' '}
         </h2>
 
-        <div className="flex justify-between text-2xl items-center mt-4">
+        <div className="mt-4 flex items-center justify-between text-2xl">
           <Ratings ratings={ratings} />
           <div className="p-3 text-green-600 duration-300 hover:bg-gray-100 hover:text-yellow-500">
             <BsFillCartPlusFill />

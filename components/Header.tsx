@@ -1,4 +1,5 @@
 import React from 'react'
+import CartTotalBTN from './shared/CartTotalBTN'
 
 const Header = () => {
   return (
@@ -61,6 +62,9 @@ const Header = () => {
                   placeholder="Search..."
                 />
               </div>
+              {/* Cart Total Button */}
+<CartTotalBTN/>
+
               <button
                 data-collapse-toggle="navbar-search"
                 type="button"
