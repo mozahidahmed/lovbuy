@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import React from 'react'
-import { AiOutlineStar } from 'react-icons/ai'
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import ProductDetailsButton from './ProductDetailsButton'
 import Ratings from './detailPage/Ratings'
@@ -36,7 +35,6 @@ const ProductCard = ({ data }: DataProps) => {
     shipping,
     quantity,
   } = data
-  console.log(images)
   return (
     <ProductDetailsButton id={_id}>
       <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-6  shadow dark:border-gray-700 dark:bg-gray-800">

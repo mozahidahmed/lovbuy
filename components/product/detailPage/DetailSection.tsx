@@ -4,45 +4,67 @@ import AddToCartSection from './AddToCartSection'
 import { BsBoxSeam, BsShieldLock, BsPinterest } from 'react-icons/bs'
 import { CgFacebook } from 'react-icons/cg'
 import { FaTwitter } from 'react-icons/fa'
+import Ratings from './Ratings'
 
-type Props = {}
+type InfoProps = {
+  info: {
+    name: string
+    price: number
+    stock: number
+    ratings: number
+    quantity: number
+    shipping: number
+    seller: string
+  }
+}
 
-const DetailSection = (props: Props) => {
+const DetailSection = ({ info }: InfoProps) => {
+  const { name, price, stock, ratings, quantity, shipping, seller } = info
+
   return (
     <div>
-      <h4 className="text-sm text-gray-600">Home / Product / Product Name</h4>
-      <h1 className=" py-6 text-2xl">Product Name</h1>
+      <h4 className="mt-8 hidden text-sm text-gray-600 md:mt-0 md:block">
+        Home / Product / Product Name
+      </h4>
+      <h1 className=" py-6 text-2xl">{name}</h1>
+
       <h2>
-        <span className="text-xl font-semibold text-orange-500">$ 420.33</span>{' '}
+        <span className="text-xl font-semibold text-orange-500 ">
+          $ {price.toFixed(2)}
+        </span>{' '}
         <span className="px-4 text-lg">
           {' '}
-          <del>$ 450.00</del>
+          <del>$ {((3 * price) / 100 + price).toFixed(2)}</del>
         </span>
-        <span className="bg-orange-500 px-2 py-0.5 text-xs">-3%</span>
+        <span className="bg-orange-500 px-2 py-0.5 text-xs text-gray-100">
+          -3%
+        </span>
       </h2>
 
-      {/* Rating Section*/}
+      {/*-------------------------------------------------------------------------------------- 
+                                           Rating Section 
+      ---------------------------------------------------------------------------------------*/}
       <div className="mb-8 mt-2 flex items-baseline gap-4">
-        <div className="flex text-red-500">
-          <AiOutlineStar />
-          <AiOutlineStar />
-          <AiOutlineStar />
-          <AiOutlineStar />
-          <AiOutlineStar />
-        </div>
+        <Ratings ratings={ratings} />
         <span className="text-sm text-gray-600">No reviews</span>
       </div>
 
       <div className="h-0.5 bg-gray-500"></div>
 
-      {/* Add cart and buy now section */}
-      <AddToCartSection />
+      {/* ------------------------------------------------------------------------------------
+                              Add cart and buy now section 
+      -------------------------------------------------------------------------------------*/}
+      <AddToCartSection quantity={stock} />
+
+      {/* ---------------------------------------------------------------------------------------
+                                        Some Extra 
+      -----------------------------------------------------------------------------*/}
 
       <div className="my-8 h-0.5 bg-gray-500"></div>
       <div>
         <div className="flex">
           <h3 className="mr-4 text-gray-600">Vendor:</h3>
-          <h3>Lolita</h3>
+          <h3>{seller}</h3>
         </div>
         <div className="flex">
           <h3 className="mr-4 text-gray-600">Type:</h3>
@@ -72,19 +94,21 @@ const DetailSection = (props: Props) => {
       </div>
       <div className="mb-2 mt-6 flex items-center justify-start gap-4">
         {' '}
-        <BsBoxSeam /> Spend $1,000.00 for Free Shipping
+        <BsBoxSeam /> Spend $2,00.00 for Free Shipping
       </div>
 
-      {/* Social share */}
-<h2 className='mt-8 font-semibold'>Share:</h2>
-      <div className="mt-2 flex items-center gap-16">
-        <button className='flex gap-2 items-center'>
+      {/*------------------------------------------------------------------------------------
+                                 Social share 
+      ---------------------------------------------------------------------------------*/}
+      <h2 className="mt-8 font-semibold">Share:</h2>
+      <div className="mt-2 flex items-center gap-5 md:gap-16">
+        <button className="flex items-center gap-2">
           <CgFacebook /> Facebook
         </button>
-        <button className='flex gap-2 items-center'>
+        <button className="flex items-center gap-2">
           <FaTwitter /> Tweet
         </button>
-        <button className='flex gap-2 items-center'>
+        <button className="flex items-center gap-2">
           {' '}
           <BsPinterest /> Pin it
         </button>

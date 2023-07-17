@@ -2,9 +2,11 @@
 import React, { ChangeEvent, useState } from 'react'
 import { BsHeart, BsHeartArrow } from 'react-icons/bs'
 
-type Props = {}
+type Props = {
+  quantity:number
+}
 
-const AddToCartSection = (props: Props) => {
+const AddToCartSection = ({ quantity }: Props) => {
   // Color
   const colors = ['red', 'green', 'orange', 'blue']
   const [selectedColor, setSelectedColor] = useState(colors[0])
@@ -55,8 +57,8 @@ const AddToCartSection = (props: Props) => {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-between gap-5">
-        <div className="flex w-1/5 items-center justify-center border-2  border-gray-500 bg-[#E5E7EB] px-0.5 py-1.5">
+      <div className="items-center justify-between gap-5 md:flex">
+        <div className="flex w-1/3  items-center justify-center border-2 border-gray-300   px-0.5 py-1.5 md:w-1/5">
           {/* Decrease BTN */}
           <button
             className="text-3xl"
@@ -70,7 +72,7 @@ const AddToCartSection = (props: Props) => {
           <input
             onChange={handleInputChange}
             value={cartCount}
-            className="w-full border-0 bg-[#E5E7EB] text-center text-gray-500 focus:outline-none focus:ring-0 disabled:border"
+            className="w-full border-0  text-center text-gray-500 focus:outline-none focus:ring-0 disabled:border"
             type="text"
           />
           {/* Increase BTN */}
@@ -80,10 +82,10 @@ const AddToCartSection = (props: Props) => {
             +
           </button>
         </div>
-        <button className="w-2/5 bg-orange-500 py-4 text-gray-100 duration-200 hover:bg-orange-400">
+        <button className="my-2 block w-full bg-orange-500 py-4 text-gray-100 duration-200 hover:bg-orange-400 md:w-2/5">
           Add to Cart
         </button>
-        <button className="w-2/5  bg-lime-600 py-4 duration-200 hover:bg-lime-400 ">
+        <button className="w-full bg-lime-600  py-4 duration-200 hover:bg-lime-400 md:w-2/5 ">
           Buy it now{' '}
         </button>
       </div>
@@ -91,7 +93,7 @@ const AddToCartSection = (props: Props) => {
         <BsHeart /> <span>Add to wishlist</span>
       </button>
 
-      <p>Available Quantity: 138</p>
+      <p>Available Quantity: {quantity}</p>
     </div>
   )
 }
