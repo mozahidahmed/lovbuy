@@ -37,12 +37,12 @@ const HeroAbout = () => {
           </div>
             <div className="flex gap-5 w-full lg:w-3/5 object-cover">
               <img
-                src="https://preview.colorlib.com/theme/passport/images/about_1.jpg.webp"
+                src="https://e0.pxfuel.com/wallpapers/55/589/desktop-wallpaper-mens-fashion-men-clothing-thumbnail.jpg"
                 alt=""
                 className="max-w-sm w-48 lg:w-1/2 md:w-fit mx-auto object-cover rounded-lg shadow-2xl"
               />
               <img
-                src="https://preview.colorlib.com/theme/passport/images/about_2.jpg.webp"
+                src="https://e0.pxfuel.com/wallpapers/392/331/desktop-wallpaper-man-fashion-business-suit-tie-lifestyle-fine-thumbnail.jpg"
                 alt=""
                 className="max-w-sm w-48 lg:w-1/2 hidden md:block md:w-fit mx-auto object-cover rounded-lg shadow-2xl lg:mt-16 lg:-mb-16"
               />
