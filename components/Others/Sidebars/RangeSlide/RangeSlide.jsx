@@ -36,10 +36,10 @@ const RangeSlide = ({ handlePrice }) => {
       </div>
       <div className="mt-5">
         <MultiRangeSlider
-          min={0}
+          min={1}
           max={200}
-          step={10}
-        //   preventWheel={true}
+          step={1}
+          preventWheel={true}
           ruler={false}
           minValue={minValue}
           maxValue={maxValue}
