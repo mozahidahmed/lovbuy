@@ -16,18 +16,6 @@ const ProductsComp = () => {
     const Products = products?.data?.result;
 
     /* ----------------------------------------------------------------*/
-    /*                  Products Category wise Length                   */
-    /* ----------------------------------------------------------------*/
-
-    const WebDesign = Products?.filter(product => product?.category === "Web Design");
-    const WebDevelopment = Products?.filter(product => product?.category === "Web Development");
-    const GraphicsDesign = Products?.filter(product => product?.category === "Graphics Design");
-    const SpokenEnglish = Products?.filter(product => product?.category === "Spoken English");
-    const Others = Products?.filter(product => product?.category === "Others");
-
-
-
-    /* ----------------------------------------------------------------*/
     /*                     Filter By Name Search                       */
     /* ----------------------------------------------------------------*/
     const handleSearchResult = (e) => {
@@ -144,7 +132,7 @@ const ProductsComp = () => {
                                 <div className="sticky top-20">
                                     <aside>
                                         <div className="md:mb-3 pb-10">
-                                            <ProductsSidebar WebDesign={WebDesign} WebDevelopment={WebDevelopment} GraphicsDesign={GraphicsDesign} SpokenEnglish={SpokenEnglish} Others={Others} handleSearchResult={handleSearchResult} handlePrice={handlePrice} handleReviewFilter={handleReviewFilter} />
+                                            <ProductsSidebar handleSearchResult={handleSearchResult} handlePrice={handlePrice} handleReviewFilter={handleReviewFilter} />
                                         </div>
                                     </aside>
                                 </div>
