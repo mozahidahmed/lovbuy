@@ -81,7 +81,7 @@ const TrustedPartners = () => {
 
     ];
     return (
-        <div className='w-full h-full md:px-10 mx-auto'>
+        <div className='w-full h-full md:px-10 mx-auto pt-10'>
 
             <h3 className="text-3xl md:text-4xl text-gray-700 text-center font-bold pb-10">Our Trusted Partners</h3>
 

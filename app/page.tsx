@@ -11,7 +11,7 @@ export default function Home() {
       <Hero />
       <Product />
       <Team />
-      <Company />
+      {/* <Company /> */}
       <TrustedPartners />
       <ReadyToTalk />
     </main>
