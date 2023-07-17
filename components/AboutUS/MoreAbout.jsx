@@ -23,19 +23,19 @@ const MoreAbout = () => {
                     <div class="w-full lg:w-8/12 lg:pt-8">
                         <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
                             <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                <img class="md:block hidden" src="https://i.ibb.co/FYTKDG6/Rectangle-118-2.png" alt="Alexa featured Image" />
-                                <img class="md:hidden block" src="https://i.ibb.co/zHjXqg4/Rectangle-118.png" alt="Alexa featured Image" />
-                                <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Alexa</p>
+                                <img class="md:block hidden h-44" src="https://media.licdn.com/dms/image/D5603AQFF7TvGPyK5qQ/profile-displayphoto-shrink_400_400/0/1670084140513?e=1695254400&v=beta&t=idwpwjNR8GQVr_gAMX2K-0WhSndCOAAD22KikKykEAc" alt="Alexa featured Image" />
+                                <img class="md:hidden block h-44" src="https://media.licdn.com/dms/image/D5603AQFF7TvGPyK5qQ/profile-displayphoto-shrink_400_400/0/1670084140513?e=1695254400&v=beta&t=idwpwjNR8GQVr_gAMX2K-0WhSndCOAAD22KikKykEAc" alt="Alexa featured Image" />
+                                <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Md. Taha</p>
                             </div>
                             <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                <img class="md:block hidden" src="https://i.ibb.co/qdd4R9T/nahid.jpg" alt="Nahid featured Image" />
-                                <img class="md:hidden block" src="https://i.ibb.co/qdd4R9T/nahid.jpg" alt="Nahid featured Image" />
-                                <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">MD. NAHID</p>
+                                <img class="md:block hidden h-44" src="https://i.ibb.co/qdd4R9T/nahid.jpg" alt="Nahid featured Image" />
+                                <img class="md:hidden block h-44" src="https://i.ibb.co/qdd4R9T/nahid.jpg" alt="Nahid featured Image" />
+                                <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Md. Nahid</p>
                             </div>
                             <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                <img class="md:block hidden" src="https://i.ibb.co/Pc6XVVC/Rectangle-120.png" alt="Liam featued Image" />
-                                <img class="md:hidden block" src="https://i.ibb.co/C5MMBcs/Rectangle-120.png" alt="Liam featued Image" />
-                                <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Liam</p>
+                                <img class="md:block hidden h-44" src="https://i.ibb.co/7phZ954/mozahid-mozahid.jpg" alt="Mozahidul Islam featued Image" />
+                                <img class="md:hidden block h-44" src="https://i.ibb.co/7phZ954/mozahid-mozahid.jpg" alt="Mozahidul Islam featued Image" />
+                                <p class="font-medium text-xl leading-5 text-gray-800 dark:text-white mt-4">Mozahidul Islam</p>
                             </div>
                         </div>
                     </div>

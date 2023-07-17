@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroAbout = () => { 
   return (
-    <div className="py-10 lg:px-10 w-full overflow-hidden mx-auto text-center bg-gray-100">
+    <div className="py-10 lg:px-10 p-5 w-full overflow-hidden mx-auto text-center bg-gray-100">
 
         <h3 className="font-semibold lg:text-xl">SIMPLY AMAZING PLACES</h3>
 
