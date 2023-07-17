@@ -1,6 +1,7 @@
 import { ProductsCategoryData } from "@/components/Data/ProductsCategoryData";
 import React from "react";
-const ProductsSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleReviewFilter, WebDesign, WebDevelopment, GraphicsDesign, SpokenEnglish, Others }) => {
+import RangeSlide from '@/components/Others/Sidebars/RangeSlide/RangeSlide'
+const ProductsSidebar = ({ handleSearchResult, handlePrice, handleReviewFilter, WebDesign, WebDevelopment, GraphicsDesign, SpokenEnglish, Others }) => {
 
   return (
     <div className=" bg-white px-4 pb-6 mt-3 shadow-lg border rounded-md overflow-hidden">
@@ -31,31 +32,11 @@ const ProductsSidebar = ({ handleSearchResult, handleFilterByCheckbox, handleRev
               <h2 className="accordion-header mb-0" id="headingOne5">
                 <button className=" accordion-button relative flex justify-between font-bold items-center w-full py-4 px-5 text-xl text-gray-800 text-left bg-white border-0 rounded-none transition focus:outline-none " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="true"
                   aria-controls="collapseOne5">
-                  <span className="text-gray-600 pr-28">Category</span>
+                  <span className="text-gray-600">Filter By Price</span>
                 </button>
               </h2>
-              <div id="collapseOne5" className="accordion-collapse collapse show" aria-labelledby="headingOne5">
-                <div className="accordion-body py-4 px-5">
-                  <div className="flex justify-center">
-                    <div>
-                      {
-                        ProductsCategoryData?.map(course => (
-                          <div key={course?.index} className="form-check w-full flex justify-between items-center py-1 gap-2">
-                            <div className="pr-7">
-                              <input onChange={handleFilterByCheckbox} value={course?.name} className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" id={course?.index} />
-                              <label className="form-check-label inline-block text-sm text-gray-800" htmlFor={course?.index}>
-                                {course?.name}
-                              </label>
-                            </div>
-
-                            <h3 className="text-gray-500 text-sm font-semibold">( {(course?.name === "Web Design" && WebDesign?.length) || (course?.name === "Web Development" && WebDevelopment?.length) || (course?.name === "Graphics Design" && GraphicsDesign?.length) || (course?.name === "Spoken English" && SpokenEnglish?.length) || (course?.name === "Others" && Others?.length)} )</h3>
-
-                          </div>
-                        ))
-                      }
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <RangeSlide handlePrice={handlePrice} />
               </div>
             </div>
           </div>

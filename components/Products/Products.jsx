@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductsGrid from "./ProductsGrid";
 import ProductsSidebar from "../Others/Sidebars/ProductsSidebar";
 import useProducts from "../Hooks/useProducts";
@@ -9,8 +9,9 @@ const ProductsComp = () => {
     const { products } = useProducts();
     const [search, setSearch] = useState([]);
     const [categoryProduct, setCategoryProduct] = useState([]);
-    const [checkboxFilter, setCheckboxFilter] = useState([]);
     const [reviewFilter, setReviewFilter] = useState([]);
+    const [price, setPrice] = useState(100);
+    const [priceFilter, setPriceFilter] = useState([]);
 
     const Products = products?.data?.result;
 
@@ -37,8 +38,8 @@ const ProductsComp = () => {
             product?.seller?.toLowerCase().includes(searchText.toLowerCase())
         );
         setCategoryProduct([]);
-        setCheckboxFilter([]);
         setReviewFilter([]);
+        setPriceFilter([]);
         setSearch(result);
     }
 
@@ -67,31 +68,31 @@ const ProductsComp = () => {
         const result = Products?.filter(product => product?.category === Category);
 
         setSearch([]);
-        setCheckboxFilter([]);
         setReviewFilter([]);
+        setPriceFilter([]);
         setCategoryProduct(result);
     };
 
     console.log("categoryProduct",categoryProduct);
 
-    /* ----------------------------------------------------------------*/
-    /*                  Filter By Checkbox Category                    */
-    /* ----------------------------------------------------------------*/
-    const handleFilterByCheckbox = (e) => {
-        const Category = e.target.value;
+  /* ----------------------------------------------------------------*/
+  /*                 PRICE RANGE FILTERING FUNCTIONALITY             */
+  /* ----------------------------------------------------------------*/
+  const handlePrice = (num) => {
+    setPrice(num);
+  };
 
-        if (e.target.checked) {
-            setCheckboxFilter([...checkboxFilter, Category]);
-        } else {
-            setCheckboxFilter(checkboxFilter?.filter(category => category !== e.target.value));
-        };
-
-        setSearch([]);
-        setReviewFilter([]);
-        setCategoryProduct([]);
-    };
-
-    const selectedResult = Products?.filter(({ category }) => checkboxFilter?.includes(category));
+  useEffect(() => {
+    if (price > 5) {
+      const filterPrice = Products?.filter(
+        (pd) => pd.price < parseInt(price, 10)
+      );
+      setSearch([]);
+      setCategoryProduct([]);
+      setReviewFilter([]);
+      setPriceFilter(filterPrice);
+    }
+  }, [price]);
 
     /* ----------------------------------------------------------------*/
     /*                       Filter By Ratings                         */
@@ -101,7 +102,7 @@ const ProductsComp = () => {
             const filterData = Products?.filter((pd) => Math.ceil(pd?.ratings) === parseInt(num));
             setSearch([]);
             setCategoryProduct([]);
-            setCheckboxFilter([]);
+            setPriceFilter([]);
             setReviewFilter(filterData);
         }
     };
@@ -114,8 +115,8 @@ const ProductsComp = () => {
     if (categoryProduct?.length > 0) {
         loadProducts = categoryProduct
     }
-    else if (selectedResult?.length > 0) {
-        loadProducts = selectedResult
+    else if (priceFilter?.length > 0) {
+        loadProducts = priceFilter
     }
     else if (search?.length > 0) {
         loadProducts = search
@@ -143,7 +144,7 @@ const ProductsComp = () => {
                                 <div className="sticky top-20">
                                     <aside>
                                         <div className="md:mb-3 pb-10">
-                                            <ProductsSidebar WebDesign={WebDesign} WebDevelopment={WebDevelopment} GraphicsDesign={GraphicsDesign} SpokenEnglish={SpokenEnglish} Others={Others} handleSearchResult={handleSearchResult} handleFilterByCheckbox={handleFilterByCheckbox} handleReviewFilter={handleReviewFilter} />
+                                            <ProductsSidebar WebDesign={WebDesign} WebDevelopment={WebDevelopment} GraphicsDesign={GraphicsDesign} SpokenEnglish={SpokenEnglish} Others={Others} handleSearchResult={handleSearchResult} handlePrice={handlePrice} handleReviewFilter={handleReviewFilter} />
                                         </div>
                                     </aside>
                                 </div>

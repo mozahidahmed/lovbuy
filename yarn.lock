@@ -599,6 +599,11 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
+multi-range-slider-react@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.npmjs.org/multi-range-slider-react/-/multi-range-slider-react-2.0.3.tgz"
+  integrity sha512-mMjrVO9rP9uRMHq61MHNmiet5NxCMblrZwX9zEcqNBCguGXdSNlrhQfeluCy9ICpq7NOT9cKn+RhANrB5TBLkQ==
+
 mz@^2.7.0:
   version "2.7.0"
   resolved "https://registry.npmjs.org/mz/-/mz-2.7.0.tgz"
