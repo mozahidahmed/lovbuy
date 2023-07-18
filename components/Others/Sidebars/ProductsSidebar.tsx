@@ -47,14 +47,14 @@ const ProductsSidebar = ({ handleSearchResult, handlePrice, handleReviewFilter }
 
           <div id="accordion-collapse" data-accordion="collapse">
             <h2 id="accordion-collapse-heading-1">
-              <button className=" accordion-button relative flex justify-between font-bold items-center w-full py-4 px-5 text-xl text-gray-800 text-left bg-white border-0 rounded-none transition duration-300 focus:outline-none " type="button" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+              <button className="relative flex justify-between font-bold items-center w-full py-4 text-xl text-gray-800 text-left bg-white border-0 rounded-none transition duration-300 focus:outline-none " type="button" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
                 <span className="text-gray-600 pr-32">Ratings</span>
                 <svg data-accordion-icon className="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5" />
                 </svg>
               </button>
             </h2>
-            <div id="accordion-collapse-body-1" className="hidden" aria-labelledby="accordion-collapse-heading-1">
+            <div>
               <div className="space-y-2">
                 <div className="flex items-center">
                   <input

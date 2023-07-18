@@ -25,7 +25,7 @@ const DetailSection = ({ info }: InfoProps) => {
   return (
     <div>
       <h4 className="mt-8 hidden text-sm text-gray-600 md:mt-0 md:block">
-        Home / Product / Product Name
+        Home / Products / {name}
       </h4>
       <h1 className=" py-6 text-2xl">{name}</h1>
 
