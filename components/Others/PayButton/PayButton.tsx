@@ -5,7 +5,7 @@ import React from 'react';
 const PayButton = ({ checkoutItems }:any) => {
     console.log(checkoutItems);
     const handleCheckout = () => {
-        axios.post(`http://localhost:5000/api/v1/stripe/create-checkout-session`, {
+        axios.post(`https://lovbuy-ecommerce-server.vercel.app/api/v1/stripe/create-checkout-session`, {
             checkoutItems
         }).then(res => {
             if (res.data.url) {
