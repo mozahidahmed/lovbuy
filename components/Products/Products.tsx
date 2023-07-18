@@ -6,8 +6,24 @@ import useProducts from "../Hooks/useProducts";
 import Loading from "../Others/Loading";
 
 const ProductsComp = () => {
-
-    const { products } = useProducts();
+    type InfoProps = {
+        product: {
+          _id: string
+          sku: string
+          name: string
+          price: number
+          stock: number
+          sale: number
+          ratings: number
+          shipping: number
+          seller: string
+          category: string
+          ratingsCount: number
+          quantity: number
+          images: [string]
+        }
+      }
+    const { products }:any = useProducts();
     const [search, setSearch] = useState([]);
     const [categoryProduct, setCategoryProduct] = useState([]);
     const [reviewFilter, setReviewFilter] = useState([]);
@@ -20,9 +36,9 @@ const ProductsComp = () => {
     /* ----------------------------------------------------------------*/
     /*                     Filter By Name Search                       */
     /* ----------------------------------------------------------------*/
-    const handleSearchResult = (e) => {
+    const handleSearchResult = (e:any) => {
         const searchText = e.target.value;
-        const result = Products?.filter((product) =>
+        const result = Products?.filter((product:any) =>
             product?.name?.toLowerCase().includes(searchText.toLowerCase()) ||
             product?.category?.toLowerCase().includes(searchText.toLowerCase()) ||
             product?.seller?.toLowerCase().includes(searchText.toLowerCase())
@@ -36,7 +52,7 @@ const ProductsComp = () => {
     /* ----------------------------------------------------------------*/
     /*                   Filter By Products Category                    */
     /* ----------------------------------------------------------------*/
-    const filterByCategory = (e) => {
+    const filterByCategory = (e:any) => {
         const Category = e.target.value;
 
         if (Category === "All Products") {
@@ -44,7 +60,7 @@ const ProductsComp = () => {
         };
 
         if (Category === "Others") {
-            const CProducts = Products?.filter((product) =>
+            const CProducts = Products?.filter((product:any) =>
             (product?.category?.toLowerCase().includes("Cap".toLowerCase()) ||
                 product?.category?.toLowerCase().includes("Bottle".toLowerCase()) ||
                 product?.category?.toLowerCase().includes("Earphones".toLowerCase()))
@@ -55,7 +71,7 @@ const ProductsComp = () => {
             setCategoryProduct(CProducts)
         };
 
-        const result = Products?.filter(product => product?.category === Category);
+        const result = Products?.filter((product:any) => product?.category === Category);
 
         setSearch([]);
         setReviewFilter([]);
@@ -68,14 +84,14 @@ const ProductsComp = () => {
     /* ----------------------------------------------------------------*/
     /*                 PRICE RANGE FILTERING FUNCTIONALITY             */
     /* ----------------------------------------------------------------*/
-    const handlePrice = (num) => {
+    const handlePrice = (num:any) => {
         setPrice(num);
     };
 
     useEffect(() => {
         if (price > 5) {
             const filterPrice = Products?.filter(
-                (pd) => pd.price < parseInt(price, 10)
+                (pd:any) => pd.price < price, 10
             );
             setSearch([]);
             setCategoryProduct([]);
@@ -87,9 +103,9 @@ const ProductsComp = () => {
     /* ----------------------------------------------------------------*/
     /*                       Filter By Ratings                         */
     /* ----------------------------------------------------------------*/
-    const handleReviewFilter = (num) => {
+    const handleReviewFilter = (num:any) => {
         if (num) {
-            const filterData = Products?.filter((pd) => Math.ceil(pd?.ratings) === parseInt(num));
+            const filterData = Products?.filter((pd:any) => Math.ceil(pd?.ratings) === parseInt(num));
             setSearch([]);
             setCategoryProduct([]);
             setPriceFilter([]);
@@ -101,7 +117,7 @@ const ProductsComp = () => {
     /* ----------------------------------------------------------------*/
     /*                        Handle View Products                     */
     /* ----------------------------------------------------------------*/
-    const handleViewBy = (e) => {
+    const handleViewBy = (e:any) => {
         const view = e.target.value;
 
         if (view === "list") {
@@ -185,7 +201,7 @@ const ProductsComp = () => {
                                     viewBy ?
                                         <div className="w-full pt-7 grid grid-cols-1 gap-6 justify-center mx-auto">
                                             {loadProducts?.length ?
-                                                loadProducts?.map((data, index) => (
+                                                loadProducts?.map((data:any, index:number) => (
                                                     <ProductsList product={data} key={index} />
                                                 )) :
                                                 <div className="w-screen -ml-28 lg:-ml-44 -mt-20 flex justify-center mx-auto">
@@ -195,7 +211,7 @@ const ProductsComp = () => {
                                         </div> :
                                         <div className="w-full pt-7 grid grid-cols-1 gap-6 sm:grid-cols-1 justify-center md:grid-cols-2 lg:grid-cols-3 mx-auto">
                                             {loadProducts?.length ?
-                                                loadProducts?.map((data, index) => (
+                                                loadProducts?.map((data:any, index:number) => (
                                                     <ProductsGrid product={data} key={index} />
                                                 )) :
                                                 <div className="w-screen -ml-28 lg:-ml-44 -mt-20 flex justify-center mx-auto">

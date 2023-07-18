@@ -2,9 +2,7 @@ import React from 'react';
 import Animation from '../Others/Animation/Animation';
 
 
-
 const ContectBanner = () => {
-
 
 
     return (
@@ -34,7 +32,7 @@ const ContectBanner = () => {
 
                         <input name="subject" className=' block w-full h-10 pl-2 border-2 border-[#d8dada] mb-5' type="text" id="" placeholder="Subject" />
 
-                        <textarea name="message" className=' block w-full h-32 resize-none pl-2 border-2 border-[#d8dada] mb-5' type="text" id="" placeholder="Your message" />
+                        <textarea name="message" className=' block w-full h-32 resize-none pl-2 border-2 border-[#d8dada] mb-5' id="" placeholder="Your message" />
 
                         <input className=' block h-10 px-7 bg-[#015abd] text-white cursor-pointer uppercase my-4' type="submit" value="Send now" />
                     </form>
@@ -43,5 +41,5 @@ const ContectBanner = () => {
         </div>
     );
 };
- 
+
 export default ContectBanner;

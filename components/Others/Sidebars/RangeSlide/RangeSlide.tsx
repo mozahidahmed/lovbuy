@@ -1,11 +1,11 @@
 import MultiRangeSlider from "multi-range-slider-react";
 import React, { useState } from "react";
 import "./RangeSlide.css";
-const RangeSlide = ({ handlePrice }) => {
+const RangeSlide = ({ handlePrice }:any) => {
   const [minValue, set_minValue] = useState(0);
   const [maxValue, set_maxValue] = useState(170);
   handlePrice(maxValue - minValue);
-  const handleInput = (e) => {
+  const handleInput = (e:any) => {
     set_minValue(e.minValue);
     set_maxValue(e.maxValue);
   };
