@@ -1,5 +1,5 @@
 'use client'
-import React, { useContext } from 'react'
+import React from 'react'
 import { BsCartCheck } from 'react-icons/bs'
 import { useSelector } from 'react-redux'
 import { RootState } from '@/app/GlobalRedux/store'

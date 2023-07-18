@@ -5,12 +5,14 @@ import toast from "react-hot-toast";
 
 export interface CartState {
     cart: any[];
+    totalPrice: number
 }
 
 
 
 const initialState: CartState = {
-    cart: []
+    cart: [],
+    totalPrice: 0
 }
 
 
@@ -30,10 +32,43 @@ export const cartSlice = createSlice({
             }
 
         },
+        removeOne: (state, action) => {
+            const removeOne = state.cart.filter((c: any) => c.id !== action.payload)
+            state.cart = removeOne
+            toast.error('Removed')
+        },
+        removeAll: (state) => {
+            state.cart = []
+            toast.error('Cart Clear')
+        },
+        quantityIncreaseByOne: (state, action) => {
+            const itemIndex = state.cart.findIndex((item) => item.id === action.payload);
+            const mainCart = state.cart
+            mainCart[itemIndex].quantity = mainCart[itemIndex].quantity + 1
+        },
+        quantityDecreaseByOne: (state, action) => {
+            const itemIndex = state.cart.findIndex((item) => item.id === action.payload);
+            const mainCart = state.cart
+
+            if (mainCart[itemIndex].quantity < 2) {
+                return
+            }
+
+            mainCart[itemIndex].quantity = mainCart[itemIndex].quantity - 1
+        },
+        countTotalPrice: (state) => {
+            // Total Price
+            let totalP = 0
+            for (const item of state.cart) {
+                const oneProductPrice = item.price * item.quantity
+                totalP += oneProductPrice
+            }
+            state.totalPrice = totalP
+        }
 
     }
 })
 
-export const { addToCart } = cartSlice.actions
+export const { addToCart, removeOne, removeAll, quantityIncreaseByOne, quantityDecreaseByOne, countTotalPrice } = cartSlice.actions
 
 export default cartSlice.reducer

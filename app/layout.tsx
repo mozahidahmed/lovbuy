@@ -21,17 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-x-hidden`}>
-        <Providers>
+      <Providers>
+        <body className={`${inter.className} overflow-x-hidden`}>
           <Header />
           <Toaster position="top-center" reverseOrder={false} />
           <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
-        </Providers>
-
-        <Footer />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
-        <script src="https://unpkg.com/react-query/dist/react-query.production.min.js"></script>
-      </body>
+          <Footer />
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+          <script src="https://unpkg.com/react-query/dist/react-query.production.min.js"></script>
+        </body>
+      </Providers>
     </html>
   )
 }
