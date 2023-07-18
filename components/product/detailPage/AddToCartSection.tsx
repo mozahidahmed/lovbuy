@@ -130,7 +130,7 @@ const AddToCartSection = ({ data }: Props) => {
         <BsHeart /> <span>Add to wishlist</span>
       </button>
 
-      <p>Available Quantity: {stock}</p>
+      <p>Available Stock: {stock}</p>
     </div>
   )
 }

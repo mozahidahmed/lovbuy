@@ -29,8 +29,10 @@ const ProductDetail = async ({ params }: Props) => {
     price,
     stock,
     ratings,
+    description,
     ratingsCount,
     images,
+    sku,
     shipping,
     quantity,
   } = data
@@ -44,13 +46,13 @@ const ProductDetail = async ({ params }: Props) => {
           <ImageSection images={images} />
 
           {/* Description section */}
-          <ProductDescription />
+          <ProductDescription description={description} />
         </div>
 
         {/* Right side or detail section */}
         <div className="md:w-1/2">
           <DetailSection
-            info={{ _id,name, price, stock,images, ratings, shipping, seller }}
+            info={{ _id, name, price, stock, sku, images, ratings, shipping, seller, quantity, ratingsCount, category }}
           />
         </div>
       </div>

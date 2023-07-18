@@ -8,19 +8,23 @@ import Ratings from './Ratings'
 
 type InfoProps = {
   info: {
-    _id:string
+    _id: string
+    sku: string
     name: string
     price: number
     stock: number
     ratings: number
     shipping: number
     seller: string
-    images:[string]
+    category: string
+    ratingsCount: number
+    quantity: number
+    images: [string]
   }
 }
 
 const DetailSection = ({ info }: InfoProps) => {
-  const { _id, name, price, stock,images, ratings, shipping, seller } = info
+  const { _id, name, price, stock, images, ratings, shipping, seller, quantity, category, sku, ratingsCount } = info
 
   return (
     <div>
@@ -47,7 +51,7 @@ const DetailSection = ({ info }: InfoProps) => {
       ---------------------------------------------------------------------------------------*/}
       <div className="mb-8 mt-2 flex items-baseline gap-4">
         <Ratings ratings={ratings} />
-        <span className="text-sm text-gray-600">No reviews</span>
+        <span className="text-sm text-gray-600">{ratingsCount} reviews</span>
       </div>
 
       <div className="h-0.5 bg-gray-500"></div>
@@ -55,7 +59,7 @@ const DetailSection = ({ info }: InfoProps) => {
       {/* ------------------------------------------------------------------------------------
                               Add cart and buy now section 
       -------------------------------------------------------------------------------------*/}
-      <AddToCartSection data={{_id,name,images,price,stock}} />
+      <AddToCartSection data={{ _id, name, images, price, stock }} />
 
       {/* ---------------------------------------------------------------------------------------
                                         Some Extra 
@@ -69,11 +73,11 @@ const DetailSection = ({ info }: InfoProps) => {
         </div>
         <div className="flex">
           <h3 className="mr-4 text-gray-600">Type:</h3>
-          <h3>Sweaters</h3>
+          <h3>{category}</h3>
         </div>
         <div className="flex">
           <h3 className="mr-4 text-gray-600">Sku:</h3>
-          <h3 className="">p13567835</h3>
+          <h3 className="">{sku}</h3>
         </div>
       </div>
 
