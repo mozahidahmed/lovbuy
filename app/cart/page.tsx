@@ -13,22 +13,23 @@ import {
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
 import { BsArrowBarLeft } from 'react-icons/bs'
+import PayButton from '@/components/Others/PayButton/PayButton'
 
-type Props = {}
+type Props = {};
 
 const Cart = (props: Props) => {
-  const { cart, totalPrice } = useSelector((state: RootState) => state.carts)
-  const { push } = useRouter()
+  const { cart, totalPrice } = useSelector((state: RootState) => state.carts);
+  const { push } = useRouter();
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   // One Product Remove
   const oneProductRemove = (id: string) => {
     dispatch(removeOne(id))
-  }
+  };
 
   useEffect(() => {
     dispatch(countTotalPrice())
-  }, [cart])
+  }, [cart]);
 
   return (
     <div className="min-h-[60vh]">
@@ -174,6 +175,8 @@ const Cart = (props: Props) => {
               className="my-2  w-full bg-lime-600 py-4 text-gray-100 duration-200 hover:bg-lime-500 ">
               Go to Checkout
             </button>
+
+            {/* <PayButton checkoutItems={cart} btnName="Go to Checkout" /> */}
           </div>
         </div>
       ) : (

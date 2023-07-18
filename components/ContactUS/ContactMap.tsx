@@ -3,7 +3,7 @@ import Animation2 from '../Others/Animation/Animation2';
  
 const ContactMap = () => {
     return (
-        <div className=''>   
+        <div className=''>
             <div style={{ backgroundImage: "url(https://edusphere.radiantthemes.com/wp-content/uploads/2020/06/repeat.png)" }} className=' bg-cover bg-no-repeat text-center pt-10 pb-40 z-0'>
                 <h5 className=' text-lg uppercase font-bold text-[#015ABD]'>MAPS & DIRECTIONS</h5>
 

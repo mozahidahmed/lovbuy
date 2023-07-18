@@ -133,7 +133,7 @@ const AddToCartSection = ({ data }: Props) => {
         {/* <button className="w-full bg-lime-600  py-4 duration-200 hover:bg-lime-400 md:w-2/5 ">
           Buy it now{' '}
         </button> */}
-        <PayButton checkoutItems={item} />
+        <PayButton checkoutItems={item} btnName="Buy it Now" />
       </div>
       <button className="my-4 flex items-center justify-start gap-3 py-4 duration-300 hover:text-orange-500">
         <BsHeart /> <span>Add to wishlist</span>
