@@ -18,6 +18,7 @@ type InfoProps = {
     shipping: number
     seller: string
     category: string
+    description: string
     ratingsCount: number
     quantity: number
     images: [string]
@@ -25,7 +26,7 @@ type InfoProps = {
 }
 
 const DetailSection = ({ info }: InfoProps) => {
-  const { _id, name, price, stock, images, ratings, shipping, seller, quantity, category,sale, sku, ratingsCount } = info
+  const { _id, name, price, stock, images, ratings, description, shipping, seller, quantity, category, sale, sku, ratingsCount } = info
 
   return (
     <div>
@@ -60,7 +61,7 @@ const DetailSection = ({ info }: InfoProps) => {
       {/* ------------------------------------------------------------------------------------
                               Add cart and buy now section 
       -------------------------------------------------------------------------------------*/}
-      <AddToCartSection data={{ _id, name, images, price, stock }} />
+      <AddToCartSection data={{ _id, name, images, price,sale, description,category, stock }} />
 
       {/* ---------------------------------------------------------------------------------------
                                         Some Extra 

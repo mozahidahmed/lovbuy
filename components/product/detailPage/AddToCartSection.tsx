@@ -1,6 +1,7 @@
 'use client'
 
 import { CartContext } from '@/components/Context/Cart'
+import PayButton from '@/components/Others/PayButton/PayButton'
 import React, { ChangeEvent, useContext, useState } from 'react'
 import toast from 'react-hot-toast'
 import { BsHeart } from 'react-icons/bs'
@@ -10,13 +11,16 @@ type Props = {
     _id: string
     stock: number
     name: string
+    description: string
+    category: string
     images: [string]
     price: number
+    sale: number
   }
 }
 
 const AddToCartSection = ({ data }: Props) => {
-  const { _id, stock, name, images, price } = data
+  const { _id, stock, name, images, price, description, category,sale } = data
 
   // Color
   const colors = ['red', 'green', 'orange', 'blue']
@@ -59,6 +63,20 @@ const AddToCartSection = ({ data }: Props) => {
     }
   }
 
+  const itemPrice = sale ? (price - (price * sale / 100)).toFixed(2) : price.toFixed(2);
+  const itemDescription = description.slice(1, 70);
+
+  const item = [
+    {
+      id: _id,
+      name: name,
+      description: itemDescription,
+      category: category,
+      image: images[0],
+      price: itemPrice,
+    }
+  ]
+
   return (
     <div className="mt-8">
       {/* Color and Size Section*/}
@@ -70,9 +88,8 @@ const AddToCartSection = ({ data }: Props) => {
           {colors.map((c) => (
             <button
               onClick={() => setSelectedColor(c)}
-              className={`bg-${c}-600   h-6 w-8 ${
-                selectedColor === c && 'ring-4'
-              } ring-red-400`}></button>
+              className={`bg-${c}-600   h-6 w-8 ${selectedColor === c && 'ring-4'
+                } ring-red-400`}></button>
           ))}
         </div>
       </div>
@@ -84,9 +101,8 @@ const AddToCartSection = ({ data }: Props) => {
           {sizes.map((s) => (
             <button
               onClick={() => setSelectedSize(s)}
-              className={` border-2 px-2.5 py-0.5 uppercase ${
-                selectedSize === s && ' border-red-600'
-              } border-gray-600`}>
+              className={` border-2 px-2.5 py-0.5 uppercase ${selectedSize === s && ' border-red-600'
+                } border-gray-600`}>
               {s}
             </button>
           ))}
@@ -122,9 +138,10 @@ const AddToCartSection = ({ data }: Props) => {
           className="my-2 block w-full bg-orange-500 py-4 text-gray-100 duration-200 hover:bg-orange-400 md:w-2/5">
           Add to Cart
         </button>
-        <button className="w-full bg-lime-600  py-4 duration-200 hover:bg-lime-400 md:w-2/5 ">
+        {/* <button className="w-full bg-lime-600  py-4 duration-200 hover:bg-lime-400 md:w-2/5 ">
           Buy it now{' '}
-        </button>
+        </button> */}
+        <PayButton checkoutItems={item} />
       </div>
       <button className="my-4 flex items-center justify-start gap-3 py-4 duration-300 hover:text-orange-500">
         <BsHeart /> <span>Add to wishlist</span>
