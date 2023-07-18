@@ -13,6 +13,7 @@ type InfoProps = {
     name: string
     price: number
     stock: number
+    sale: number
     ratings: number
     shipping: number
     seller: string
@@ -24,7 +25,7 @@ type InfoProps = {
 }
 
 const DetailSection = ({ info }: InfoProps) => {
-  const { _id, name, price, stock, images, ratings, shipping, seller, quantity, category, sku, ratingsCount } = info
+  const { _id, name, price, stock, images, ratings, shipping, seller, quantity, category,sale, sku, ratingsCount } = info
 
   return (
     <div>
@@ -35,14 +36,14 @@ const DetailSection = ({ info }: InfoProps) => {
 
       <h2>
         <span className="text-xl font-semibold text-orange-500 ">
-          $ {price.toFixed(2)}
+          $ {(price - (price * sale / 100)).toFixed(2)}
         </span>{' '}
         <span className="px-4 text-lg">
           {' '}
-          <del>$ {((3 * price) / 100 + price).toFixed(2)}</del>
+          <del>$ {price.toFixed(2)}</del>
         </span>
         <span className="bg-orange-500 px-2 py-0.5 text-xs text-gray-100">
-          -3%
+          -{sale}%
         </span>
       </h2>
 
@@ -99,7 +100,7 @@ const DetailSection = ({ info }: InfoProps) => {
       </div>
       <div className="mb-2 mt-6 flex items-center justify-start gap-4">
         {' '}
-        <BsBoxSeam /> Spend $2,00.00 for Free Shipping
+        <BsBoxSeam /> Spend ${(price + (price * 10 / 100)).toFixed(2)} for Free Shipping
       </div>
 
       {/*------------------------------------------------------------------------------------
