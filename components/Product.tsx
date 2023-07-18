@@ -15,7 +15,7 @@ const getProducts = async () => {
 }
 
 // Product type
-type ProductType= {
+type ProductType = {
   _id: string
   category: string
   name: string

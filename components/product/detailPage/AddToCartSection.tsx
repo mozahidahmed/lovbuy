@@ -1,9 +1,9 @@
 'use client'
 
-import { CartContext } from '@/components/Context/Cart'
-import React, { ChangeEvent, useContext, useState } from 'react'
-import toast from 'react-hot-toast'
+import { addToCart } from '@/app/GlobalRedux/Features/Cart/CartSlice'
+import React, { ChangeEvent, useState } from 'react'
 import { BsHeart } from 'react-icons/bs'
+import { useDispatch } from 'react-redux'
 
 type Props = {
   data: {
@@ -35,28 +35,19 @@ const AddToCartSection = ({ data }: Props) => {
     }
   }
 
-  // Add to cart
-  const { cart, setCart } = useContext<any>(CartContext)
 
 
-  const addToCart = () => {
-    const isExist = cart.find((c: any) => c.id === _id)
-    if (isExist) {
-      toast.error('This product already added!')
-      return
-    } else {
-      setCart([
-        ...cart,
-        {
-          id: _id,
-          name: name,
-          image: images[0],
-          price: price,
-          quantity: cartCount,
-        },
-      ])
-      toast.success('Successfully added')
-    }
+  const dispatch = useDispatch()
+  const addCart = () => {
+    dispatch(
+      addToCart({
+        id: _id,
+        name: name,
+        image: images[0],
+        price: price,
+        quantity: cartCount,
+      })
+    )
   }
 
   return (
@@ -118,7 +109,7 @@ const AddToCartSection = ({ data }: Props) => {
           </button>
         </div>
         <button
-          onClick={addToCart}
+          onClick={addCart}
           className="my-2 block w-full bg-orange-500 py-4 text-gray-100 duration-200 hover:bg-orange-400 md:w-2/5">
           Add to Cart
         </button>

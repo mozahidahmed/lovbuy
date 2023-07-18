@@ -3,7 +3,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Providers } from './GlobalRedux/provider'
-import CartProvider from '@/components/Context/Cart'
 import { Toaster } from 'react-hot-toast'
 import Footer from '@/components/shared/Footer'
 import NextAuthSessionProvider from './providers/sessionProvider'
@@ -23,13 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} overflow-x-hidden`}>
-        <Header />
-        <Toaster position="top-center" reverseOrder={false} />
-        <NextAuthSessionProvider>
-          <Providers>
-            <CartProvider>{children}</CartProvider>
-          </Providers>
-        </NextAuthSessionProvider>
+        <Providers>
+          <Header />
+          <Toaster position="top-center" reverseOrder={false} />
+          <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+        </Providers>
 
         <Footer />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
