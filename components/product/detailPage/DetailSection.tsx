@@ -35,18 +35,27 @@ const DetailSection = ({ info }: InfoProps) => {
       </h4>
       <h1 className=" py-6 text-2xl">{name}</h1>
 
-      <h2>
-        <span className="text-xl font-semibold text-orange-500 ">
-          $ {(price - (price * sale / 100)).toFixed(2)}
-        </span>{' '}
-        <span className="px-4 text-lg">
-          {' '}
-          <del>$ {price.toFixed(2)}</del>
-        </span>
-        <span className="bg-orange-500 px-2 py-0.5 text-xs text-gray-100">
-          -{sale}%
-        </span>
-      </h2>
+      <div className="">
+        {
+          sale ? <h2>
+            <span className="text-xl font-semibold text-orange-500 ">
+              $ {(price - (price * sale / 100)).toFixed(2)}
+            </span>{' '}
+            <span className="px-4 text-lg">
+              {' '}
+              <del>$ {price.toFixed(2)}</del>
+            </span>
+            <span className="bg-orange-500 px-2 py-0.5 text-xs text-gray-100">
+              -{sale}%
+            </span>
+          </h2> :
+            <h2 className="">
+              <span className="text-xl font-semibold text-orange-500 ">
+                $ {price.toFixed(2)}
+              </span>{' '}
+            </h2>
+        }
+      </div>
 
       {/*-------------------------------------------------------------------------------------- 
                                            Rating Section 
@@ -61,7 +70,7 @@ const DetailSection = ({ info }: InfoProps) => {
       {/* ------------------------------------------------------------------------------------
                               Add cart and buy now section 
       -------------------------------------------------------------------------------------*/}
-      <AddToCartSection data={{ _id, name, images, price,sale, description,category, stock }} />
+      <AddToCartSection data={{ _id, name, images, price, sale, description, category, stock }} />
 
       {/* ---------------------------------------------------------------------------------------
                                         Some Extra 

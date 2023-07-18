@@ -32,13 +32,13 @@ const Header = () => {
     <header className="sticky top-0 z-50 h-20 w-full bg-gray-300 shadow">
       <nav className="sticky top-0 border-gray-200 bg-white dark:bg-gray-900">
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-          <a href="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img
               src="https://res.cloudinary.com/dsigyjfjq/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1689492016/lovbuy_ejfjyb.jpg?_s=public-apps"
               className="mr-3 h-12"
               alt="Flowbite Logo"
             />
-          </a>
+          </Link>
           <div className="form-control flex flex-col gap-1">
             {/* <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" className="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
               <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

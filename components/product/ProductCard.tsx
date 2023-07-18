@@ -3,6 +3,7 @@ import React from 'react'
 import { BsFillCartPlusFill } from 'react-icons/bs'
 import ProductDetailsButton from './ProductDetailsButton'
 import Ratings from './detailPage/Ratings'
+import ProductCardAddToCartBTN from './ProductCardAddToCartBTN'
 
 interface DataProps {
   data: {
@@ -36,8 +37,8 @@ const ProductCard = ({ data }: DataProps) => {
     quantity,
   } = data
   return (
-    <ProductDetailsButton id={_id}>
-      <div className="max-w-sm rounded-lg border border-gray-200 bg-white p-6  shadow dark:border-gray-700 dark:bg-gray-800">
+    <div className="max-w-sm relative pb-16 rounded-lg border border-gray-200 bg-white p-6  shadow dark:border-gray-700 dark:bg-gray-800">
+      <ProductDetailsButton id={_id}>
         <div className="mb-2  grid justify-center">
           <Image
             className=" object-cover"
@@ -61,15 +62,15 @@ const ProductCard = ({ data }: DataProps) => {
             $ {price.toFixed(2)}
           </span>{' '}
         </h2>
-
-        <div className="mt-4 flex items-center justify-between text-2xl">
+      </ProductDetailsButton>
+      <div className="mt-4 absolute bottom-3 flex items-center justify-between text-2xl">
+        <ProductDetailsButton id={_id}>
           <Ratings ratings={ratings} />
-          <div className="p-3 text-green-600 duration-300 hover:bg-gray-100 hover:text-yellow-500">
-            <BsFillCartPlusFill />
-          </div>
-        </div>
+        </ProductDetailsButton>
+        {/* Add to cart */}
+        <ProductCardAddToCartBTN data={{ _id, name, images, price }} />
       </div>
-    </ProductDetailsButton>
+    </div>
   )
 }
 
